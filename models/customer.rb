@@ -17,7 +17,8 @@ class Customer
       VALUES
       ($1, $2) RETURNING *"
     values = [@name, @funds]
-    customers = SqlRunner.run(sql, values)
+    customers = SqlRunner.run(sql, values).first
     @id = customers['id'].to_i
   end
+
 end
