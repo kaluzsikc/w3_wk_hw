@@ -6,6 +6,7 @@ require('pry-byebug')
 
 Customer.delete_all()
 Film.delete_all()
+Ticket.delete_all()
 
 customer1 = Customer.new({'name' => 'Porter Morisson', 'funds' => 100})
 customer1.save()
@@ -33,6 +34,24 @@ ticket3 = Ticket.new({'customer_id' => customer3.id, 'film_id' => film1.id})
 ticket3.save()
 ticket4 = Ticket.new({'customer_id' => customer4.id, 'film_id' => film1.id})
 ticket4.save
+
+ticket5 = Ticket.new({'customer_id' => customer1.id, 'film_id' => film2.id})
+ticket5.save()
+ticket6 = Ticket.new({'customer_id' => customer2.id, 'film_id' => film2.id})
+ticket6.save()
+ticket7 = Ticket.new({'customer_id' => customer3.id, 'film_id' => film2.id})
+ticket7.save()
+ticket8 = Ticket.new({'customer_id' => customer4.id, 'film_id' => film2.id})
+ticket8.save
+
+ticket9 = Ticket.new({'customer_id' => customer1.id, 'film_id' => film3.id})
+ticket9.save()
+ticket10 = Ticket.new({'customer_id' => customer2.id, 'film_id' => film3.id})
+ticket10.save()
+ticket11 = Ticket.new({'customer_id' => customer3.id, 'film_id' => film3.id})
+ticket11.save()
+ticket12 = Ticket.new({'customer_id' => customer4.id, 'film_id' => film3.id})
+ticket12.save
 
 
 binding.pry
