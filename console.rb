@@ -2,6 +2,8 @@ require_relative('models/customer')
 
 require('pry-byebug')
 
+Customer.delete_all()
+
 customer1 = Customer.new({'name' => 'Porter Morisson', 'funds' => 100})
 customer1.save
 customer2 = Customer.new({'name' => 'Barry Cruz', 'funds' => 50})
