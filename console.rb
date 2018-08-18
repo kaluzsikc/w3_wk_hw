@@ -4,6 +4,7 @@ require_relative('models/film')
 require('pry-byebug')
 
 Customer.delete_all()
+Film.delete_all()
 
 customer1 = Customer.new({'name' => 'Porter Morisson', 'funds' => 100})
 customer1.save()
@@ -22,9 +23,6 @@ film3 = Film.new({'title' => 'Incredibles', 'price' => 20})
 film3.save()
 film4 = Film.new({'title' => 'Skyscraper', 'price' => 30})
 film4.save()
-
-
-
 
 
 binding.pry
