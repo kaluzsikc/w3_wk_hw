@@ -10,6 +10,16 @@ class Ticket
     @film_id = options['film_id'].to_i
   end
 
+  def save()
+    sql = "INSERT INTO tickets
+          (customer_id, film_id)
+          VALUES
+          ($1, $2) RETURNING *"
+    values = [@customer_id, @film_id]
+    tickets = SqlRunner.run( sql, values).first
+    @id = tickets['id'].to_i
+  end
+
   def self.all()
     sql = "SELECT * FROM tickets"
     values = []
