@@ -1,4 +1,4 @@
--- DROP TABLE tickets;
+DROP TABLE tickets;
 DROP TABLE customers;
 DROP TABLE films;
 
@@ -11,11 +11,11 @@ CREATE TABLE customers (
 CREATE TABLE films (
   id SERIAL4 PRIMARY KEY,
   title VARCHAR(255) NOT NULL,
-  price INT4 NoT NULL
+  price INT4 NOT NULL
 );
 
--- CREATE TABLE tickets (
---   id SERIAL4 PRIMARY KEY,
---   customer_id INT4 REFERENCES customer(id) ON DELETE CASCADE,
---   film_id INT4 REFERENCES film(id) ON DELETE CASCADE
--- );
+CREATE TABLE tickets (
+  id SERIAL4 PRIMARY KEY,
+  customer_id INT4 REFERENCES customers(id) ON DELETE CASCADE,
+  film_id INT4 REFERENCES films(id) ON DELETE CASCADE
+);
