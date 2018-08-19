@@ -47,8 +47,8 @@ class Customer
     return result.count
   end
 
-  def buy_ticket()
-    @funds -= price if @funds >= price 
+  def buy_ticket(film)
+  @funds -= film.price if @funds >= film.price
   end
 
   def self.all()
