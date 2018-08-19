@@ -47,6 +47,10 @@ class Customer
     return result.count
   end
 
+  def buy_ticket()
+    @funds -= price if @funds >= price 
+  end
+
   def self.all()
     sql = "SELECT * FROM customers"
     values = []
