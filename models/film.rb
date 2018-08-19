@@ -21,6 +21,7 @@ class Film
     @id = movies['id'].to_i
   end
 
+
   def self.all()
     sql = "SELECT * FROM films"
     values = []
